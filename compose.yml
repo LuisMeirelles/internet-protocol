@@ -1,0 +1,12 @@
+services:
+  host1:
+    image: rust:latest
+    user: 1000:1000
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+      - ~/.config/nvim:/home/admin/.config/nvim
+      - ~/.cargo:/home/admin/.cargo
+    tty: true
+    stdin_open: true
+
