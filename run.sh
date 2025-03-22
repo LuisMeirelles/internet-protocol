@@ -2,6 +2,12 @@
 
 cargo build
 
+exit_code=$?
+
+if [[ $exit_code -ne 0 ]]; then
+  exit $exit_code
+fi
+
 sudo setcap cap_net_admin=eip target/debug/internet-protocol
 
 ./target/debug/internet-protocol &
